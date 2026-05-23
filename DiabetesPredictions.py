@@ -30,22 +30,19 @@ st.image('https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png', 
 st.title('MACHINE LEARNING')
 st.text('Dra. Olanda Prieto Ordaz')
 st.text('Melissa Cirene Olivas Palma - 319284')
-st.header('MEDIAN HOUSE VALUE IN CAROLINA')
+st.header('PREDICT DIABETES RISK PROBABILITY')
 
-dtAttributes = ['<1H OCEAN', 'INLAND', 'ISLAND', 'NEAR BAY', 'NEAR OCEAN']
-
-attrLongitude = st.selectbox('Select Longitude', np.arange(-130, -110, 2))
-attrLatitude = st.selectbox('Select Latitude', np.arange(30, 50, 2))
-attrMedianAge = st.selectbox('Select Median Age', np.arange(1, 60, 1))
-attrTotalRooms = st.selectbox('Select Total Rooms', np.arange(2, 39320, 1))
-attrTotalBedrooms = st.selectbox('Select Total Bedrooms', np.arange(1, 6445, 1))
-attrPopulation = st.selectbox('Select Population', np.arange(1, 40000, 5))
-attrHouseholds = st.selectbox('Select Households', np.arange(1, 6082, 1))
-attrMediamIncome = st.selectbox('Select Median Income', np.arange(0.0, 15.00, 0.1))
-attrOceanProx = st.selectbox('Select Ocean Proximity', dtAttributes)
+attrPregnancies = st.selectbox('Select Pregnancies', np.arange(-130, -110, 2))
+attrGlucose = st.selectbox('Select Glucose', np.arange(30, 50, 2))
+attrBloodPressure = st.selectbox('Select BloodPressure', np.arange(1, 60, 1))
+attrSkinThickness = st.selectbox('Select SkinThickness', np.arange(2, 39320, 1))
+attrInsulin = st.selectbox('Select Insulin', np.arange(1, 6445, 1))
+attrBMI = st.selectbox('Select BMI', np.arange(1, 40000, 5))
+attrDiabetesPedigree = st.selectbox('Select DiabetesPedigreeFunction', np.arange(1, 6082, 1))
+attrAge = st.selectbox('Select Age', np.arange(0.0, 15.00, 0.1))
 
 #if st.button('PREDICT VALUE'):
- #   data = pd.array([attrLongitude, attrLatitude, attrMedianAge, attrTotalRooms, attrTotalBedrooms, attrPopulation, attrHouseholds, attrMediamIncome, attrOceanProx, 0])
-  #  df = pd.DataFrame(data.reshape(1, 10), columns = ["longitude", "latitude", "housing_median_age", "total_rooms", "total_bedrooms", "population", "households", "median_income", "ocean_proximity", "median_house_value"])
+ #   data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge, 0])
+  #  df = pd.DataFrame(data.reshape(1, 10), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age", "Outcome"])
    # name1 =  predictValue(df)
     #st.write(name1)
