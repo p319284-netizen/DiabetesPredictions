@@ -6,6 +6,9 @@
 
 #Melissa Cirene Olivas Palma - 319284
 
+# =====================================================================
+# IMPORTACIÓN DE LIBRERIAS UTILIZADAS
+# =====================================================================
 import os
 import streamlit as st
 import pandas as pd
@@ -14,6 +17,44 @@ import joblib as jb
 import sklearn
 from PIL import Image
 from sklearn.base import BaseEstimator, TransformerMixin
+
+# =====================================================================
+# FUNCIONES PERSONALIZADAS DEL PREPROCESAMIENTO
+# =====================================================================
+
+class mixerColumn(BaseEstimator, TransformerMixin):
+  def __init__(self):
+    pass
+  def fit(self, X, y=None):
+    return self
+  def transform(self, X):
+    glucose = X[:, 0]
+    insulin = X[:, 1]
+
+    # Calculate the new feature.
+    glucose_insulin = glucose * insulin
+
+    # Return combined features (Glucose / Insulin)
+    return np.hstack(glucose_insulin.reshape(1, -1, 1))
+   
+def aplicar_winsorize(X, limite_superior=0.05):
+    # Ensure X is 2D, even if it's a single column
+    if X.ndim == 1:
+        X = X.reshape(-1, 1)
+
+    X_winsorized = np.empty_like(X, dtype=float)
+    for i in range(X.shape[1]):
+        X_winsorized[:, i] = winsorize(X[:, i], limits=(None, limite_superior))
+    return X_winsorized
+
+def replace_zeros_with_nan(X):
+    if X.ndim == 1:
+        return np.where(X == 0, np.nan, X).reshape(-1, 1)
+    return np.where(X == 0, np.nan, X)
+ 
+# =====================================================================
+# IMPORTACION DE LOS MODELOS
+# =====================================================================
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 path_modelo = os.path.join(BASE_DIR, "modelo_RandomForest.pkl")
