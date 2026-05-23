@@ -16,6 +16,7 @@ import numpy as np
 import joblib as jb
 import sklearn
 from PIL import Image
+from sklearn.pipeline import Pipeline
 from sklearn.base import BaseEstimator, TransformerMixin
 from scipy.stats.mstats import winsorize
 from sklearn.impute import SimpleImputer
