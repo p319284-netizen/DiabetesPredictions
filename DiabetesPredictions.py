@@ -14,11 +14,14 @@ import sklearn
 from PIL import Image
 from sklearn.base import BaseEstimator, TransformerMixin
 
-#def predictValue(some_data):
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+path_modelo = os.path.join(BASE_DIR, "modelo_RandomForest.pkl")
+
+def predictValue(some_data):
  #   with open('anaconda3/my_model1.pkl', 'rb') as f: 
-  #      model = jb.load(f)
-   #     data = model.predict(some_data)
-   # return data
+    model = jb.load(path_modelo)
+    data = model.predict(some_data)
+    return data
 
 st.text('UNIVERSIDAD AUTONOMA DE CHIHUAHUA')
 st.text('Facultad de Ingenieria')
@@ -38,8 +41,8 @@ attrBMI = st.selectbox('Select BMI', np.arange(1, 70, 5))
 attrDiabetesPedigree = st.selectbox('Select DiabetesPedigreeFunction', np.arange(0.0, 3.0, 0.1))
 attrAge = st.selectbox('Select Age', np.arange(20, 85, 1))
 
-#if st.button('PREDICT VALUE'):
- #   data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge, 0])
-  #  df = pd.DataFrame(data.reshape(1, 10), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age", "Outcome"])
-   # name1 =  predictValue(df)
-    #st.write(name1)
+if st.button('PREDICT VALUE'):
+    data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge, 0])
+    df = pd.DataFrame(data.reshape(1, 10), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age", "Outcome"])
+    name1 =  predictValue(df)
+    st.write(name1)
