@@ -43,7 +43,7 @@ attrDiabetesPedigree = st.selectbox('Select DiabetesPedigreeFunction', np.arange
 attrAge = st.selectbox('Select Age', np.arange(20, 85, 1))
 
 if st.button('PREDICT VALUE'):
-    data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge, 0])
-    df = pd.DataFrame(data.reshape(1, 10), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age", "Outcome"])
+    data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge])
+    df = pd.DataFrame(data.reshape(1, 8), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"])
     name1 =  predictValue(df)
     st.write(name1)
