@@ -17,6 +17,11 @@ import joblib as jb
 import sklearn
 from PIL import Image
 from sklearn.base import BaseEstimator, TransformerMixin
+from scipy.stats.mstats import winsorize
+from sklearn.impute import SimpleImputer
+from sklearn.compose import ColumnTransformer
+from sklearn.base import BaseEstimator, TransformerMixin,  ClassifierMixin
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, FunctionTransformer
 
 # =====================================================================
 # FUNCIONES PERSONALIZADAS DEL PREPROCESAMIENTO
