@@ -3,5 +3,4 @@ pandas
 numpy
 joblib
 sklearn
-PIL
-sklearn.base
+Pillow
