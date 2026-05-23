@@ -22,6 +22,35 @@ from sklearn.base import BaseEstimator, TransformerMixin
 # FUNCIONES PERSONALIZADAS DEL PREPROCESAMIENTO
 # =====================================================================
 
+columns_for_scaling = ['Pregnancies', 'Age', 'DiabetesPedigreeFunction']
+columns_with_null_values = ['Insulin', 'Glucose', 'BMI']
+columns_for_mix = ['BloodPressure', 'SkinThickness']
+
+pipeline_standard_numeric = Pipeline(steps=[
+    ('imputer', SimpleImputer(strategy='median')),
+    ('quantile', FunctionTransformer(func=aplicar_winsorize, kw_args={'limite_superior': 0.10}, validate=False)),
+    ('scaler', StandardScaler()) ])
+
+pipeline_with_null_processing = Pipeline(steps=[
+    ('replace_empty', FunctionTransformer(func=replace_zeros_with_nan, validate=False)),
+    ('imputer', SimpleImputer(strategy='median')),
+    ('quantile', FunctionTransformer(func=aplicar_winsorize, kw_args={'limite_superior': 0.10}, validate=False)),
+    ('scaler', StandardScaler()) ])
+
+pipeline_for_mix = Pipeline(steps=[
+    ('replace_empty', FunctionTransformer(func=replace_zeros_with_nan, validate=False)),
+    ('imputer', SimpleImputer(strategy='median')),
+    ('quantile', FunctionTransformer(func=aplicar_winsorize, kw_args={'limite_superior': 0.05}, validate=False)),
+    ('mixer_column', mixerColumn()),
+    ('scaler', StandardScaler()) ])
+
+preprocesador = ColumnTransformer(
+    transformers=[
+        ('standard_num_proc', pipeline_standard_numeric, columns_for_scaling),
+        ('total_charges_proc', pipeline_with_null_processing, columns_with_null_values),
+        ('mixer_columns', pipeline_for_mix, columns_for_mix),
+    ],    remainder='drop')
+
 class mixerColumn(BaseEstimator, TransformerMixin):
   def __init__(self):
     pass
