@@ -105,13 +105,18 @@ def predictValue(some_data):
     return predRandomForest, predAdaBoost, predXGBoost
 
 
-st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", width=50)
+st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", width=100)
 st.sidebar.title("UNIVERSIDAD AUTONOMA DE CHIHUAHUA")
 st.sidebar.caption("Facultad de Ingeniería")
+st.sidebar.info("""
+MACHINE LEARNING
+Docente: Dra. Olanda Prieto Ordaz
 
-st.title('MACHINE LEARNING')
-st.text('Dra. Olanda Prieto Ordaz')
-st.text('Melissa Cirene Olivas Palma - 319284')
+Melissa Cirene Olivas Palma
+Matrícula: 319284
+"""
+)
+
 st.header('PREDICT DIABETES RISK PROBABILITY')
 
 col1, col2 = st.columns(2)
