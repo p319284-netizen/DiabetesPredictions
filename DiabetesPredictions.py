@@ -111,14 +111,14 @@ with st.sidebar:
     # 1. Encabezado Institucional (UACH)
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        st.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", use_container_width=True) #width=100)
+        st.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", use_container_width=True)
     st.markdown(
         """
         <div style="text-align: center; margin-bottom: 20px;">
-            <p style="font-family: 'Arial'; font-weight: 800; font-size: 1.1rem; color: #1E3A8A; margin: 0; letter-spacing: 0.5px;">
+            <p style="font-weight: 800; font-size: 1.1rem; color: #1E3A8A; margin: 0; letter-spacing: 0.5px;"> #font-family: 'Arial';
                 UNIVERSIDAD AUTÓNOMA<br>DE CHIHUAHUA
             </p>
-            <p style="font-family: 'Arial'; font-weight: 400; font-size: 0.9rem; color: #6B7280; margin-top: 4px;">
+            <p style="font-weight: 400; font-size: 0.9rem; color: #6B7280; margin-top: 4px;"> #font-family: 'Arial'; 
                 Facultad de Ingeniería
             </p>
         </div>
