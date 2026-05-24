@@ -17,6 +17,7 @@ import numpy as np
 import joblib as jb
 import sklearn
 from PIL import Image
+from xgboost import XGBClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.base import BaseEstimator, TransformerMixin
 from scipy.stats.mstats import winsorize
