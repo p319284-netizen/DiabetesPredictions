@@ -130,29 +130,25 @@ with st.sidebar:
     
     # 2. Información de la Materia
     st.caption("📖 MATERIA")
-    st.markdown(
-        """
-        <div style="background-color: #F3F4F6; padding: 12px; border-radius: 8px; border-left: 5px solid #2563EB; margin-bottom: 20px;">
-            <h3 style="margin: 0; font-size: 1.1rem; color: #1F2937;">Machine Learning</h3>
-            <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #4B5563;">
-                <b>Docente:</b> Dra. Olanda Prieto Ordaz
-            </p>
-        </div>
-        """, 
-        unsafe_allow_html=True
-    )
-    
-#st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", width=100)
-#st.sidebar.title("UNIVERSIDAD AUTONOMA DE CHIHUAHUA")
-#st.sidebar.caption("Facultad de Ingeniería")
-#st.sidebar.info("""
-#MACHINE LEARNING
-#Docente: Dra. Olanda Prieto Ordaz
+    #st.markdown(
+        #"""
+        #<div style="background-color: #F3F4F6; padding: 12px; border-radius: 8px; border-left: 5px solid #2563EB; margin-bottom: 20px;">
+       #     <h3 style="margin: 0; font-size: 1.1rem; color: #1F2937;">Machine Learning</h3>
+           # <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #4B5563;">
+          #      <b>Docente:</b> Dra. Olanda Prieto Ordaz
+         #   </p>
+        #</div>
+        #""", 
+        #unsafe_allow_html=True)
+      st.info("""
+              MACHINE LEARNING
+              
+              Docente: Dra. Olanda Prieto Ordaz
 
-#Melissa Cirene Olivas Palma
-#Matrícula: 319284
-#"""
-#)
+              Melissa Cirene Olivas Palma
+              Matrícula: 319284
+              """)
+    #)
 
 st.header('PREDICT DIABETES RISK PROBABILITY')
 
