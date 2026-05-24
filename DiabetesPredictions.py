@@ -106,15 +106,15 @@ def predictValue(some_data):
 
 
 with st.sidebar:
-    
     # 1. Encabezado Institucional (UACH)
+    st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", width=100)
     st.markdown(
         """
         <div style="text-align: center; margin-bottom: 20px;">
-            <p style="font-family: 'sans-serif'; font-weight: 800; font-size: 1.1rem; color: #1E3A8A; margin: 0; letter-spacing: 0.5px;">
+            <p style="font-family: 'Arial'; font-weight: 800; font-size: 1.1rem; color: #1E3A8A; margin: 0; letter-spacing: 0.5px;">
                 UNIVERSIDAD AUTÓNOMA<br>DE CHIHUAHUA
             </p>
-            <p style="font-family: 'sans-serif'; font-weight: 400; font-size: 0.9rem; color: #6B7280; margin-top: 4px;">
+            <p style="font-family: 'Arial'; font-weight: 400; font-size: 0.9rem; color: #6B7280; margin-top: 4px;">
                 Facultad de Ingeniería
             </p>
         </div>
@@ -122,7 +122,7 @@ with st.sidebar:
         unsafe_allow_html=True
     )
     
-    st.divider() # Línea divisoria nativa
+    st.divider() # Línea divisoria
     
     # 2. Información de la Materia
     st.caption("📖 MATERIA")
