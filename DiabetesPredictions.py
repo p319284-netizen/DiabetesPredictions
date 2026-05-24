@@ -105,17 +105,50 @@ def predictValue(some_data):
     return predRandomForest, predAdaBoost, predXGBoost
 
 
-st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", width=100)
-st.sidebar.title("UNIVERSIDAD AUTONOMA DE CHIHUAHUA")
-st.sidebar.caption("Facultad de Ingeniería")
-st.sidebar.info("""
-MACHINE LEARNING
-Docente: Dra. Olanda Prieto Ordaz
+with st.sidebar:
+    
+    # 1. Encabezado Institucional (UACH)
+    st.markdown(
+        """
+        <div style="text-align: center; margin-bottom: 20px;">
+            <p style="font-family: 'sans-serif'; font-weight: 800; font-size: 1.1rem; color: #1E3A8A; margin: 0; letter-spacing: 0.5px;">
+                UNIVERSIDAD AUTÓNOMA<br>DE CHIHUAHUA
+            </p>
+            <p style="font-family: 'sans-serif'; font-weight: 400; font-size: 0.9rem; color: #6B7280; margin-top: 4px;">
+                Facultad de Ingeniería
+            </p>
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
+    
+    st.divider() # Línea divisoria nativa
+    
+    # 2. Información de la Materia
+    st.caption("📖 MATERIA")
+    st.markdown(
+        """
+        <div style="background-color: #F3F4F6; padding: 12px; border-radius: 8px; border-left: 5px solid #2563EB; margin-bottom: 20px;">
+            <h3 style="margin: 0; font-size: 1.1rem; color: #1F2937;">Machine Learning</h3>
+            <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: #4B5563;">
+                <b>Docente:</b> Dra. Olanda Prieto Ordaz
+            </p>
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
+    
+#st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", width=100)
+#st.sidebar.title("UNIVERSIDAD AUTONOMA DE CHIHUAHUA")
+#st.sidebar.caption("Facultad de Ingeniería")
+#st.sidebar.info("""
+#MACHINE LEARNING
+#Docente: Dra. Olanda Prieto Ordaz
 
-Melissa Cirene Olivas Palma
-Matrícula: 319284
-"""
-)
+#Melissa Cirene Olivas Palma
+#Matrícula: 319284
+#"""
+#)
 
 st.header('PREDICT DIABETES RISK PROBABILITY')
 
