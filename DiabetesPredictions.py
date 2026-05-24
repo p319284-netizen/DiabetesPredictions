@@ -168,6 +168,30 @@ with col5:
 with col6:
     attrAge = st.selectbox('Select Age', np.arange(20, 85, 1))
 
+def database_segment(predFinal, predRF, predAdaBoost, predXGBoost):
+    st.header("📊 Predicciones", help="A continuación se muestran las predicciones realizadas por el modelo.")
+    Prediccion, RandomForest, AdaBoost, XGBoost
+        make_tabs(["PREDICCIÓN", "RANDOM FOREST", "ADABOOST", "XGBOOST"])
+    
+    with Prediccion:
+        st_code_block("create-database", "La predicción obtenida por los modelos.",
+        f"""Los diferentes modelos mostraron que el resultado es {predFinal}""")
+
+    with RandomForest:
+        st_code_block("create-database", "La predicción obtenida por el modelo Random Forest",
+        f"""El modelo Random Forest mostró que el resultado es {predRF}""")
+
+    with AdaBoost:
+        st_code_block("create-database", "La predicción obtenida por el modelo AdaBoost",
+        f"""El modelo AdaBoost mostró que el resultado es {predAdaBoost}""")
+
+    with XGBoost:
+        st_code_block("create-database", "La predicción obtenida por el modelo XGBoost",
+        f"""El modelo XGBoost mostró que el resultado es {predXGBoost}""")
+
+
+segment_dict = {
+    "📊 Predicciones": database_segment}
 
 # =====================================================================
 # PREDICCIONES
@@ -178,11 +202,14 @@ if st.button('PREDICT VALUE'):
     df = pd.DataFrame(data.reshape(1, 8), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"])
     name1, name2, name3 =  predictValue(df)
 
-    col10, col11, col12 = st.columns(3)
-    with col10:
-        label1 = "No diabetes" if name1 == 0 else "Diabetes"
-        st.metric("Random Forest", f"{label1}" )
-    with col11:
-        st.metric("AdaBoost", f"{name2}")
-    with col12:
-        st.metric("XGBoost", f"{name3}")
+    database_segment("Positivo", "Positivo", "Positivo", "Positivo")
+    #col10, col11, col12 = st.columns(3)
+    #with col10:
+     #   label1 = "Negativo" if name1 == 0 else "Positivo"
+     # 3  st.metric("Random Forest", f"{label1}" )
+    #with col11:
+      #  label2 = "Negativo" if name2 == 0 else "Positivo"
+       # st.metric("AdaBoost", f"{label2}")
+    #with col12:
+     #   label3 = "Negativo" if name3 == 0 else "Positivo"
+      #  st.metric("XGBoost", f"{label3}")
