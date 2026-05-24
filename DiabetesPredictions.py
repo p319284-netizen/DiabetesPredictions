@@ -177,7 +177,7 @@ def make_tabs(*names):
 def database_segment(predFinal, predRF, predAdaBoost, predXGBoost):
     st.header("📊 Predicciones", help="A continuación se muestran las predicciones realizadas por el modelo.")
     Prediccion, RandomForest, AdaBoost, XGBoost
-        make_tabs(["PREDICCIÓN", "RANDOM FOREST", "ADABOOST", "XGBOOST"])
+    make_tabs(["PREDICCIÓN", "RANDOM FOREST", "ADABOOST", "XGBOOST"])
     
     with Prediccion:
         st_code_block("create-database", "La predicción obtenida por los modelos.",
