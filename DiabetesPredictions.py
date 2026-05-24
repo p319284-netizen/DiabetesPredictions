@@ -14,7 +14,7 @@ import sys
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib as jb
+import pickle
 import sklearn
 from PIL import Image
 from xgboost import XGBClassifier
@@ -93,9 +93,9 @@ preprocesador = ColumnTransformer(
 # IMPORTACION DE LOS MODELOS
 # =====================================================================
 
-modelRandomForest = jb.load("modelo_RandomForest.pkl")
-modelAdaBoost = jb.load("modelo_AdaBoost.pkl")
-modelXGBoost = jb.load("modelo_GXBoost.pkl")
+modelRandomForest = pickle.load("modelo_RandomForest.pkl")
+modelAdaBoost = pickle.load("modelo_AdaBoost.pkl")
+modelXGBoost = pickle.load("modelo_GXBoost.pkl")
 
 def predictValue(some_data):
     predRandomForest = modelRandomForest.predict(some_data)
