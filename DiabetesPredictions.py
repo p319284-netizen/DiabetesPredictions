@@ -104,10 +104,14 @@ def predictValue(some_data):
     predXGBoost = modelXGBoost.predict(some_data)
     return predRandomForest, predAdaBoost, predXGBoost
 
-
+# =====================================================================
+# INTERFAZ STREAMLIT
+# =====================================================================
 with st.sidebar:
     # 1. Encabezado Institucional (UACH)
-    st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", width=100)
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png", use_container_width=True) #width=100)
     st.markdown(
         """
         <div style="text-align: center; margin-bottom: 20px;">
