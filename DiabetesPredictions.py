@@ -155,6 +155,6 @@ if st.button('PREDICT VALUE'):
     with col10:
         st.metric("Random Forest", f"{name1}" )
     with col11:
-        st.metric("AdaBoost", f{name2}")
+        st.metric("AdaBoost", f"{name2}")
     with col12:
-        st.metric("XGBoost", f{name3}")
+        st.metric("XGBoost", f"{name3}")
