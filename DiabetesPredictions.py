@@ -92,15 +92,13 @@ preprocesador = ColumnTransformer(
 # IMPORTACION DE LOS MODELOS
 # =====================================================================
 
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-#path_modelo = os.path.join(BASE_DIR, "modelo_RandomForest.pkl")
-#model = jb.load(path_modelo)
-model = jb.load("modelo_RandomForest.pkl")
+modelRandomForest = jb.load("modelo_RandomForest.pkl")
+modelAdaBoost = jb.load("modelo_AdaBoost.pkl")
 
 def predictValue(some_data):
- #   with open('anaconda3/my_model1.pkl', 'rb') as f: 
-    data = model.predict(some_data)
-    return data
+    predRandomForest = modelRandomForest.predict(some_data)
+    predAdaBoost = modelAdaBoost(some_data)
+    return predRandomForest, predAdaBoost
 
 st.text('UNIVERSIDAD AUTONOMA DE CHIHUAHUA')
 st.text('Facultad de Ingenieria')
@@ -123,5 +121,6 @@ attrAge = st.selectbox('Select Age', np.arange(20, 85, 1))
 if st.button('PREDICT VALUE'):
     data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge])
     df = pd.DataFrame(data.reshape(1, 8), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"])
-    name1 =  predictValue(df)
+    name1, name2 =  predictValue(df)
     st.write(name1)
+    st.write(name2)
