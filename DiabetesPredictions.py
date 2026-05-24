@@ -129,7 +129,6 @@ with st.sidebar:
     st.divider() # Línea divisoria
     
     # 2. Información de la Materia
-    st.caption("📖 MATERIA")
     st.info("""
             MACHINE LEARNING
               
@@ -178,11 +177,17 @@ if st.button('PREDICT VALUE'):
     data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge])
     df = pd.DataFrame(data.reshape(1, 8), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"])
     name1, name2, name3 =  predictValue(df)
+
+    label_map = {0: "No diabetes", 1: "Diabetes"}
     
+    label1 = label_map.get(name1, f"Error ({name1})")
+    label2 = label_map.get(name2, f"Error ({name2})")
+    label3 = label_map.get(name3, f"Error ({name3})")
+  
     col10, col11, col12 = st.columns(3)
     with col10:
-        st.metric("Random Forest", f"{name1}" )
+        st.metric("Random Forest", f"{label1}" )
     with col11:
-        st.metric("AdaBoost", f"{name2}")
+        st.metric("AdaBoost", f"{label2}")
     with col12:
-        st.metric("XGBoost", f"{name3}")
+        st.metric("XGBoost", f"{label3}")
