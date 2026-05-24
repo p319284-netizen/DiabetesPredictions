@@ -104,9 +104,14 @@ def predictValue(some_data):
     predXGBoost = modelXGBoost.predict(some_data)
     return predRandomForest, predAdaBoost, predXGBoost
 
-st.text('UNIVERSIDAD AUTONOMA DE CHIHUAHUA')
-st.text('Facultad de Ingenieria')
-st.image('https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png', width=100)
+
+st.sidebar.title("UNIVERSIDAD AUTONOMA DE CHIHUAHUA")
+st.sidebar.caption("Facultad de Ingeniería")
+st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png', width=100")
+
+#st.text('UNIVERSIDAD AUTONOMA DE CHIHUAHUA')
+#st.text('Facultad de Ingenieria')
+#st.image('https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png', width=100)
 
 st.title('MACHINE LEARNING')
 st.text('Dra. Olanda Prieto Ordaz')
