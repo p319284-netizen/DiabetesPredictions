@@ -202,14 +202,9 @@ if st.button('PREDICT VALUE'):
     df = pd.DataFrame(data.reshape(1, 8), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"])
     name1, name2, name3 =  predictValue(df)
 
-    database_segment("Positivo", "Positivo", "Positivo", "Positivo")
-    #col10, col11, col12 = st.columns(3)
-    #with col10:
-     #   label1 = "Negativo" if name1 == 0 else "Positivo"
-     # 3  st.metric("Random Forest", f"{label1}" )
-    #with col11:
-      #  label2 = "Negativo" if name2 == 0 else "Positivo"
-       # st.metric("AdaBoost", f"{label2}")
-    #with col12:
-     #   label3 = "Negativo" if name3 == 0 else "Positivo"
-      #  st.metric("XGBoost", f"{label3}")
+    lbPredFinal = "Negativo" if (name1 + name2 + name3) < 2 else "Positivo"
+    lbRF = "Negativo" if name1 == 0 else "Positivo"
+    lbAdaBoost = "Negativo" if name2 == 0 else "Positivo"
+    lbXGBoost = "Negativo" if name3 == 0 else "Positivo"
+  
+    database_segment(lbPredFinal, lbRF, lbAdaBoost, lbXGBoost)
