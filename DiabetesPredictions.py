@@ -93,9 +93,16 @@ preprocesador = ColumnTransformer(
 # IMPORTACION DE LOS MODELOS
 # =====================================================================
 
-modelRandomForest = pickle.load("modelo_RandomForest.pkl")
-modelAdaBoost = pickle.load("modelo_AdaBoost.pkl")
-modelXGBoost = pickle.load("modelo_GXBoost.pkl")
+with open("modelo_RandomForest.pkl", "rb") as archivo:
+    modelRandomForest = pickle.load(archivo)
+with open("modelo_AdaBoost.pkl", "rb") as archivo:
+    modelAdaBoost = pickle.load(archivo)
+with open("modelo_GXBoost.pkl", "rb") as archivo:
+    modelXGBoost = pickle.load(archivo)
+
+#modelRandomForest = pickle.load("modelo_RandomForest.pkl")
+#modelAdaBoost = pickle.load("modelo_AdaBoost.pkl")
+#modelXGBoost = pickle.load("modelo_GXBoost.pkl")
 
 def predictValue(some_data):
     predRandomForest = modelRandomForest.predict(some_data)
