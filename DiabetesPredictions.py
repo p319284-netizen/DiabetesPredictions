@@ -132,7 +132,7 @@ with col5:
     attrInsulin = st.selectbox('Select Insulin', np.arange(1, 850, 1))
 
 with col6:
-    attrBMI = st.selectbox('Select BMI', np.arange(1, 70, 5))
+    attrBMI = st.selectbox('Select BMI', np.arange(1, 70, 0.1))
 
 col7, col8 = st.columns(2)
 with col5:
