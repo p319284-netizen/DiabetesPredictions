@@ -107,7 +107,7 @@ def predictValue(some_data):
 
 st.sidebar.title("UNIVERSIDAD AUTONOMA DE CHIHUAHUA")
 st.sidebar.caption("Facultad de Ingeniería")
-st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png', width=100")
+st.sidebar.image("https://cimav.edu.mx/wp-content/uploads/2017/05/ingenieria-uach.png', width=50")
 
 #st.text('UNIVERSIDAD AUTONOMA DE CHIHUAHUA')
 #st.text('Facultad de Ingenieria')
