@@ -94,13 +94,6 @@ preprocesador = ColumnTransformer(
 # IMPORTACION DE LOS MODELOS
 # =====================================================================
 
-#with open("modelo_RandomForest.pkl", "rb") as archivo:
- #   modelRandomForest = pickle.load(archivo)
-#with open("modelo_AdaBoost.pkl", "rb") as archivo:
- #   modelAdaBoost = pickle.load(archivo)
-#with open("modelo_GXBoost.pkl", "rb") as archivo:
- #   modelXGBoost = pickle.load(archivo)
-
 modelRandomForest = jb.load("modelo_RandomForest.pkl")
 modelAdaBoost = jb.load("modelo_AdaBoost.pkl")
 modelXGBoost = jb.load("modelo_GXBoost.pkl")
@@ -120,8 +113,13 @@ st.text('Dra. Olanda Prieto Ordaz')
 st.text('Melissa Cirene Olivas Palma - 319284')
 st.header('PREDICT DIABETES RISK PROBABILITY')
 
-attrPregnancies = st.selectbox('Select Pregnancies', np.arange(0, 20, 1))
-attrGlucose = st.selectbox('Select Glucose', np.arange(100, 250, 2))
+col1, col2 = st.columns(2)
+with col1:
+    attrPregnancies = st.selectbox('Select Pregnancies', np.arange(0, 20, 1))
+
+with col2:
+    attrGlucose = st.selectbox('Select Glucose', np.arange(100, 250, 2))
+
 attrBloodPressure = st.selectbox('Select BloodPressure', np.arange(60, 260, 1))
 attrSkinThickness = st.selectbox('Select SkinThickness', np.arange(0, 100, 1))
 attrInsulin = st.selectbox('Select Insulin', np.arange(1, 850, 1))
