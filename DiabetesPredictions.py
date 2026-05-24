@@ -173,20 +173,21 @@ def database_segment(predFinal, predRF, predAdaBoost, predXGBoost):
     Prediccion, RandomForest, AdaBoost, XGBoost = st.tabs(["PREDICCIÓN", "RANDOM FOREST", "ADABOOST", "XGBOOST"])
     
     with Prediccion:
-        st_code_block("create-database", "La predicción obtenida por los modelos.",
-        f"""Los diferentes modelos mostraron que el resultado es {predFinal}""")
+        st.subheader("La predicción obtenida por los modelos.")
+        st.info(f"Los diferentes modelos mostraron que el resultado es **{predFinal}**")
 
     with RandomForest:
-        st_code_block("create-database", "La predicción obtenida por el modelo Random Forest",
-        f"""El modelo Random Forest mostró que el resultado es {predRF}""")
-
+        st.subheader("La predicción obtenida por el modelo Random Forest")
+        st.info(f"El modelo Random Forest mostró que el resultado es **{predFinal}**")
+        
     with AdaBoost:
-        st_code_block("create-database", "La predicción obtenida por el modelo AdaBoost",
-        f"""El modelo AdaBoost mostró que el resultado es {predAdaBoost}""")
-
+        st.subheader("La predicción obtenida por el modelo AdaBoost")
+        st.info(f"El modelo AdaBoost mostró que el resultado es **{predFinal}**")
+        
     with XGBoost:
-        st_code_block("create-database", "La predicción obtenida por el modelo XGBoost",
-        f"""El modelo XGBoost mostró que el resultado es {predXGBoost}""")
+        st.subheader("La predicción obtenida por el modelo XGBoost")
+        st.info(f"El modelo XGBoost mostró que el resultado es **{predFinal}**")
+        
 
 
 segment_dict = {
