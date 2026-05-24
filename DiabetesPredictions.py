@@ -138,7 +138,6 @@ with st.sidebar:
             Melissa Cirene Olivas Palma
             Matrícula: 319284
             """)
-    #)
 
 st.header('PREDICT DIABETES RISK PROBABILITY')
 
