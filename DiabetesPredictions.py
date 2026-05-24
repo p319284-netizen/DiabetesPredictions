@@ -120,12 +120,31 @@ with col1:
 with col2:
     attrGlucose = st.selectbox('Select Glucose', np.arange(100, 250, 2))
 
-attrBloodPressure = st.selectbox('Select BloodPressure', np.arange(60, 260, 1))
-attrSkinThickness = st.selectbox('Select SkinThickness', np.arange(0, 100, 1))
-attrInsulin = st.selectbox('Select Insulin', np.arange(1, 850, 1))
-attrBMI = st.selectbox('Select BMI', np.arange(1, 70, 5))
-attrDiabetesPedigree = st.selectbox('Select DiabetesPedigreeFunction', np.arange(0.0, 3.0, 0.1))
-attrAge = st.selectbox('Select Age', np.arange(20, 85, 1))
+col3, col4 = st.columns(2)
+with col3:
+    attrBloodPressure = st.selectbox('Select BloodPressure', np.arange(60, 260, 1))
+
+with col4:
+    attrSkinThickness = st.selectbox('Select SkinThickness', np.arange(0, 100, 1))
+
+col5, col6 = st.columns(2)
+with col5:
+    attrInsulin = st.selectbox('Select Insulin', np.arange(1, 850, 1))
+
+with col6:
+    attrBMI = st.selectbox('Select BMI', np.arange(1, 70, 5))
+
+col7, col8 = st.columns(2)
+with col5:
+    attrDiabetesPedigree = st.selectbox('Select DiabetesPedigreeFunction', np.arange(0.0, 3.0, 0.1))
+
+with col6:
+    attrAge = st.selectbox('Select Age', np.arange(20, 85, 1))
+
+
+# =====================================================================
+# PREDICCIONES
+# =====================================================================
 
 if st.button('PREDICT VALUE'):
     data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge])
