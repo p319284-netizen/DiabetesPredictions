@@ -115,10 +115,10 @@ with st.sidebar:
     st.markdown(
         """
         <div style="text-align: center; margin-bottom: 20px;">
-            <p style="font-weight: 800; font-size: 1.1rem; color: #1E3A8A; margin: 0; letter-spacing: 0.5px;"> #font-family: 'Arial';
+            <p style="font-weight: 800; font-size: 1.3rem; color: #1E3A8A; margin: 0; letter-spacing: 0.5px;">
                 UNIVERSIDAD AUTÓNOMA<br>DE CHIHUAHUA
             </p>
-            <p style="font-weight: 400; font-size: 0.9rem; color: #6B7280; margin-top: 4px;"> #font-family: 'Arial'; 
+            <p style="font-weight: 400; font-size: 1.1rem; color: #6B7280; margin-top: 4px;">
                 Facultad de Ingeniería
             </p>
         </div>
