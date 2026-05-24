@@ -180,6 +180,7 @@ if st.button('PREDICT VALUE'):
 
     col10, col11, col12 = st.columns(3)
     with col10:
+        label1 = "No diabetes" if name1 == 0 else "Diabetes"
         st.metric("Random Forest", f"{name1}" )
     with col11:
         st.metric("AdaBoost", f"{name2}")
