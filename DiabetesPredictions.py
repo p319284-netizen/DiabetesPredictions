@@ -168,6 +168,12 @@ with col5:
 with col6:
     attrAge = st.selectbox('Select Age', np.arange(20, 85, 1))
 
+def make_tabs(*names):
+    """Wrapper around st.tabs returning the created tab objects."""
+    if len(names) == 1 and isinstance(names[0], (list, tuple)):
+        names = names[0]
+    return st.tabs(list(names))
+
 def database_segment(predFinal, predRF, predAdaBoost, predXGBoost):
     st.header("📊 Predicciones", help="A continuación se muestran las predicciones realizadas por el modelo.")
     Prediccion, RandomForest, AdaBoost, XGBoost
