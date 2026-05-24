@@ -150,6 +150,15 @@ if st.button('PREDICT VALUE'):
     data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge])
     df = pd.DataFrame(data.reshape(1, 8), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"])
     name1, name2, name3 =  predictValue(df)
-    st.write(name1)
-    st.write(name2)
-    st.write(name3)
+    
+    col10, col11, col12 = st.columns(3)
+    with col10:
+        st.write(f"**Random Forest:** {name1}")
+    with col11:
+        st.write(f"**AdaBoost:** {name2}")
+    with col12:
+        st.write(f"**XGBoost:** {name3}")
+        
+    #st.write(name1)
+    #st.write(name2)
+    #st.write(name3)
