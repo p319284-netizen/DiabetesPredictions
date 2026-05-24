@@ -94,11 +94,13 @@ preprocesador = ColumnTransformer(
 
 modelRandomForest = jb.load("modelo_RandomForest.pkl")
 modelAdaBoost = jb.load("modelo_AdaBoost.pkl")
+modelXGBoost = jb.load("modelo_GXBoost.pkl")
 
 def predictValue(some_data):
     predRandomForest = modelRandomForest.predict(some_data)
-    predAdaBoost = modelAdaBoost(some_data)
-    return predRandomForest, predAdaBoost
+    predAdaBoost = modelAdaBoost.predict(some_data)
+    predXGBoost = modelXGBoost.predict(some_data)
+    return predRandomForest, predAdaBoost, predXGBoost
 
 st.text('UNIVERSIDAD AUTONOMA DE CHIHUAHUA')
 st.text('Facultad de Ingenieria')
@@ -121,6 +123,7 @@ attrAge = st.selectbox('Select Age', np.arange(20, 85, 1))
 if st.button('PREDICT VALUE'):
     data = pd.array([attrPregnancies, attrGlucose, attrBloodPressure, attrSkinThickness, attrInsulin, attrBMI, attrDiabetesPedigree, attrAge])
     df = pd.DataFrame(data.reshape(1, 8), columns = ["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"])
-    name1, name2 =  predictValue(df)
+    name1, name2, name3 =  predictValue(df)
     st.write(name1)
     st.write(name2)
+    st.write(name3)
